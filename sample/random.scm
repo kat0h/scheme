@@ -1,0 +1,5 @@
+(define namelist (quote ("a" "b" "c")))
+(define randindex (modulo (rand) (length namelist)))
+(define get_nth (lambda (x list) (if (= 0 x) (car list) (get_nth (- x 1) (cdr list)))))
+(sleep 1)
+(print (get_nth randindex namelist))
